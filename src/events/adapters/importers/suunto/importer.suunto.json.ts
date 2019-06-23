@@ -82,8 +82,6 @@ export class EventImporterSuuntoJSON {
 
       const eventJSONObject = JSON.parse(jsonString);
 
-      debugger;
-
       // Create a creator and pass it to all activities (later)
       const creator = new Creator(
         ImporterSuuntoDeviceNames[eventJSONObject.DeviceLog.Device.Name] // Try to get a listed name
@@ -303,8 +301,6 @@ export class EventImporterSuuntoJSON {
       // If it belongs to the activity add it
       if (point.getDate() >= activity.startDate && point.getDate() <= activity.endDate) {
         activity.addPoint(point);
-      } else {
-        debugger;
       }
     });
   }
